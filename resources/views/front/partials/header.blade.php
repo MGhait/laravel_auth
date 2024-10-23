@@ -54,6 +54,9 @@ id="layout-navbar">
               <div class="flex-grow-1">
                 <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
                 <small class="text-muted">Admin</small>
+
+                {{-- {{ Auth::guard('web')->user()->name }} // default gurd same as Auth::user()->name --}}
+                {{-- {{ Auth::guard('admin')->user()->name //  to get the admin gurd }} --}}
               </div>
             </div>
           </a>
