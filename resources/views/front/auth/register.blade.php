@@ -40,7 +40,7 @@
                       {{-- EMAIL --}}
                       <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" :value="__('Email')"/>
+                        <input type="text" class="form-control" id="email" name="email" autocomplete="email" placeholder="Enter your email"  />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                       </div>
 
@@ -52,7 +52,7 @@
                             type="password"
                             id="password"
                             class="form-control"
-                            name="password"
+                            name="password" autocomplete="password"
                             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                             aria-describedby="password"
                           />
