@@ -54,9 +54,6 @@ id="layout-navbar">
               <div class="flex-grow-1">
                 <span class="fw-semibold d-block">{{ Auth::guard('admin')->user()?->name }}</span>
                 <small class="text-muted">Admin</small>
-
-                {{-- {{ Auth::guard('web')->user()->name }} // default gurd same as Auth::user()->name --}}
-                {{-- {{ Auth::guard('admin')->user()->name //  to get the admin gurd }} --}}
               </div>
             </div>
           </a>
@@ -89,10 +86,8 @@ id="layout-navbar">
           <div class="dropdown-divider"></div>
         </li>
         <li>
-          <form action="{{ route('logout') }}" method="POST"href="auth-login-basic.html">
+          <form action="{{ route('back.logout') }}" method="POST"href="auth-login-basic.html">
             @csrf
-            {{-- <i class="bx bx-power-off me-2"></i>
-            <button class="align-middle">Log Out</button> --}}
             <a class="dropdown-item" href="javascript:{}" onclick="this.closest('form').submit();return false;">
               <i class="bx bx-power-off me-2"></i>
               <span class="align-middle">Log Out</span>

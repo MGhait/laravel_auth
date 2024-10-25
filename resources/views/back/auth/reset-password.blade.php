@@ -21,11 +21,11 @@
               <div class="card-body">
                 @include('back.partials.authLogo')
                 <h4 class="mb-2">Rest Password 🔒</h4>
-                
+
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                <form id="formAuthentication" class="mb-3" action="{{ route('password.store') }}" method="POST">
+                <form id="formAuthentication" class="mb-3" action="{{ route('back.password.store') }}" method="POST">
                   @csrf
 
                   <!-- Password Reset Token -->
@@ -40,7 +40,7 @@
                         id="email"
                         name="email" value="{{ old('email', $request->email) }}"
                         placeholder="Enter your email"
-                        
+
                         />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
@@ -60,7 +60,7 @@
                         </div>
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
-        
+
                     {{-- CONFIRM PASSWORD --}}
                     <div class="mb-3 form-password-toggle">
                     <label class="form-label" for="password_confirmation">Password Confirmation</label>
@@ -79,7 +79,7 @@
                   <button class="btn btn-primary d-grid w-100">Reset Password</button>
                 </form>
                 <div class="text-center">
-                  <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                  <a href="{{ route('back.login') }}" class="d-flex align-items-center justify-content-center">
                     <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                     Back to login
                   </a>
@@ -90,7 +90,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- / Content -->
     @include('back.partials.authScripts')
 

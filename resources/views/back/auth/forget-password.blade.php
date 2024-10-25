@@ -22,11 +22,11 @@
                 @include('back.partials.authLogo')
                 <h4 class="mb-2">Forgot Password? 🔒</h4>
                 <p class="mb-4">Enter your email and we'll send you instructions to reset your password</p>
-                
+
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                <form id="formAuthentication" class="mb-3" action="{{ route('password.email') }}" method="POST">
+                <form id="formAuthentication" class="mb-3" action="{{ route('back.password.email') }}" method="POST">
                   @csrf
                   {{-- Email --}}
                   <div class="mb-3">
@@ -44,7 +44,7 @@
                   <button class="btn btn-primary d-grid w-100">Send Reset Link</button>
                 </form>
                 <div class="text-center">
-                  <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                  <a href="{{ route('back.login') }}" class="d-flex align-items-center justify-content-center">
                     <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                     Back to login
                   </a>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- / Content -->
     @include('back.partials.authScripts')
 

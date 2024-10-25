@@ -20,8 +20,8 @@
                     @include('back.partials.authLogo')
                     <h4 class="mb-2">Adventure starts here 🚀</h4>
                     <p class="mb-4">Make your app management easy and fun!</p>
-      
-                    <form id="formAuthentication" class="mb-3" action="{{ route('register') }}" method="POST">
+
+                    <form id="formAuthentication" class="mb-3" action="{{ route('back.register') }}" method="POST">
                       @csrf
                       {{-- NAME --}}
                       <div class="mb-3">
@@ -60,7 +60,7 @@
                         </div>
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                       </div>
-      
+
                       {{-- CONFIRM PASSWORD --}}
                       {{-- <div class="mb-3 form-password-toggle">
                         <label class="form-label" for="password">Password Confirmation</label>
@@ -77,7 +77,7 @@
                         </div>
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                       </div> --}}
-      
+
                       {{-- temporary --}}
                       {{-- <div class="mb-3">
                         <div class="form-check">
@@ -90,10 +90,10 @@
                       </div> --}}
                       <button class="btn btn-primary d-grid w-100">Sign up</button>
                     </form>
-      
+
                     <p class="text-center">
                       <span>Already have an account?</span>
-                      <a href="{{ route('login') }}">
+                      <a href="{{ route('back.login') }}">
                         <span>Sign in instead</span>
                       </a>
                     </p>
